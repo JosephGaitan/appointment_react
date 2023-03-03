@@ -53,7 +53,6 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
     if (paciente.id) {
       objetoPaciente.id = paciente.id;
-      // esto está hueso, hay que revisarlo bien
       const pacientesActualizados = pacientes.map((pacienteState) =>
         pacienteState.id === paciente.id ? objetoPaciente : pacienteState
       );
@@ -76,11 +75,9 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
       <h2 className="font-black text-3xl text-center">Patient monitoring</h2>
-      <p className="text-lg mt-5 text-center mb-10">
-        Add Patients and {""}
-        <span className="text-indigo-600 font-bold "> Manage them </span>
-      </p>
-
+      <div>
+      {Object.keys(paciente).length === 0 ? (<p className="text-lg mt-5 text-center mb-10">Add Patients and <span className="text-indigo-600 font-bold "> Manage them </span></p> ) : (<p className="  uppercase text-2xl text-white font-bold my-5 bg-blue-600 text-center">editing an existing patient</p>)}
+      </div>
       <form
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
         onSubmit={handleSubmit}
@@ -177,7 +174,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
         <input
           type="submit"
           className="bg-indigo-600 p-3 text-white w-full uppercase font-bold hover:bg-indigo-800 hover:cursor-pointer"
-          value={paciente.id ? "Edit Patient" : "Add Patient"}
+          value={paciente.id ? "Save changes" : "Add Patient"}
         ></input>
       </form>
     </div>

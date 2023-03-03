@@ -33,7 +33,7 @@ const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
               :
 
               (
-                <>
+                <div className="p-2">
                   <h2 className="font-black text-3xl text-center">There are not Patients</h2>
                   <p className="text-xl mt-5 mb-10 text-center">
                       Start by adding your patients {''} 
@@ -41,7 +41,7 @@ const ListadoPacientes = ({pacientes, setPaciente, eliminarPaciente}) => {
                         and they will be displayed bellow
                       </span>
                   </p>
-                </>
+                </div>
               )}
 
         </div>
